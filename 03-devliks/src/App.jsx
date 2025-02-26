@@ -17,39 +17,45 @@ const troca =() => {
 
   return (
   
+    
     <div id="App" className={isLight && "light"}>
 
+    <div id="container"> 
     <Perfil fotoPerfil={foto} >@liv_217m </Perfil>
     
     <Switch troca={troca} isLight={isLight}/>
+
+    <div id="links">
     <ul>
     <Links link={"https://github.com/LiviaOrmeleze"}>GitHub</Links>
     <Links link={"https://www.instagram.com/liv_217m/"}>Instagram</Links>
     <Links link={"https://br.pinterest.com/lormeleze217/"}>Pinterest</Links>
     <Links link={"https://open.spotify.com/playlist/7kzfyFtGu1YS3W9NiAWskd"}>Spotify</Links>
-   
     </ul>
+    </div>
 
 
 <div id='socialLinks'>
   <SocialLinks 
     link={"https://github.com/LiviaOrmeleze"}
     icon={"logo-github"}
-  />
+    />
   <SocialLinks 
     link={"https://www.instagram.com/liv_217m/"}
     icon={"logo-instagram"}
-  /><SocialLinks 
-  link={"https://br.pinterest.com/lormeleze217/"}
-  icon={"logo-pinterest"}
+    /><SocialLinks 
+    link={"https://br.pinterest.com/lormeleze217/"}
+    icon={"logo-pinterest"}
 /><SocialLinks 
     link={"https://open.spotify.com/playlist/7kzfyFtGu1YS3W9NiAWskd"}
     icon={"play-circle-outline"}
-  />
+    />
 </div>
 <Rodape>@liv_217m</Rodape>
     </div>
+    </div>
    
+  
   )
 }
 
