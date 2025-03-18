@@ -56,7 +56,7 @@ const handleKeyPress= (e) => {
     ))}
    </div> 
     ) : ( 
-      <h2 className='empty'>😒 Filme nã encontrado 😒</h2>
+      <h2 className='empty'>😒 Filme não encontrado 😒</h2>
     )}
 
       <Footer
