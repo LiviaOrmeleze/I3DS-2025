@@ -1,8 +1,9 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Footer from './components/footer/Footer';
 import MovieCard from './components/movieCard/MovieCard';
-//import logo from "https://placehold.co/200x200"
+import logo from "./assets/devflix.png"
+import lupa from "./assets/search.svg"
 
 const App = () => {
 
@@ -36,13 +37,13 @@ const handleKeyPress= (e) => {
   return (
     <div id='app'>
 
-      <img className='logo' src={"https://placehold.co/200x200"} alt="" />
+      <img className='logo' src={logo} alt="" />
 
       <div className='search'>
       <input 
       onKeyDown={handleKeyPress} 
       onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Pesquise por filmes' />
-      <img onClick={() => searchMovies(search)} src={"https://placehold.co/20x20"} alt="" />
+      <img onClick={() => searchMovies(search)} src={lupa} alt="" />
       </div>
 
 
