@@ -21,7 +21,7 @@ const App = () => {
 
 //criando a conexão com a API e trazendo informações
 const searchMovies= async (title)=> {
-const response = await fetch(`${apiUrl}&s=${title}`)
+const response = await fetch(`${apiUrl}&s=${title}&`)
 const data = await response.json()
 
   //Alimentando o movies
@@ -50,7 +50,7 @@ const handleKeyPress= (e) => {
     {movies?.length > 0 ? (
       <div className="container">
     {movies.map((movie, index) => (
-      <MovieCard key={index} {...movie} />
+      <MovieCard key={index} apiUrl={apiUrl} {...movie} />
     
     ))}
    </div> 
