@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap");
+:root {
+    --font-kiwi: "Kiwi Maru", serif;
+  }
+  
+
+#chat-container {
+     width: 400px;
+    height: 600px;
+}
+
+#chat{
+    font-family: var(--font-kiwi);
+}
+#chat h1{
+    font-size: 48px;
+}
+#chat-body{
+    font-family: var(--font-kiwi);
+}
+#chat-footer{
+    font-family: var(--font-kiwi);
+}
+.logo{
+    width: 400px;
+    height: 150px;
+
+}
