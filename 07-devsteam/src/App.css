@@ -30,6 +30,9 @@ body{
     color: #beeb14;
   }
 
+  .corValor{
+    color: #beeb14;
+  }
   #addCarrinho:hover{
 background-color: #547625;
   }
