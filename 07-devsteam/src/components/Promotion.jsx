@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PromoCard from "./PromoCard";
 
 const Promotion = (props) => {
@@ -36,14 +36,14 @@ const Promotion = (props) => {
         "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
     },
     {
-      id: 4,
+      id: 5,
       titulo: "Red Dead Redemption 2",
       preco: 199.9,
       desconto: 40, // 40% off
       imagem:
         "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
     },{
-      id: 4,
+      id: 6,
       titulo: "Red Dead Redemption 2",
       preco: 199.9,
       desconto: 40, // 40% off
@@ -51,6 +51,16 @@ const Promotion = (props) => {
         "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
     },
   ];
+
+  const [randomGames, setRandomGames] = useState([]);
+
+  useEffect(() => {
+    const shuffledGames = games
+      .filter((jogo) => jogo.desconto > 0) // Filtra jogos com desconto
+      .sort(() => Math.random() - 0.5) // Embaralha o array
+      .slice(0, 3); // Seleciona os 3 primeiros jogos
+    setRandomGames(shuffledGames);
+  }, []); // O array vazio garante que isso só será executado uma vez
 
   return (
     <div id="promotion" className="container w-75 my-4">
@@ -62,10 +72,7 @@ const Promotion = (props) => {
         
         
         {/* mapeando um array com react */}
-        {games.filter((jogo) => jogo.desconto > 0) 
-              .sort(() => Math.random() - 0.5) // Embaralha o array
-              .slice(0, 3)
-              .map((jogo) => (
+        {randomGames.map((jogo) => (
           <PromoCard
             key={jogo.id}
             titulo={jogo.titulo}

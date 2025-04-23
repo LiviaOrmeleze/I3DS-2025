@@ -18,7 +18,14 @@ const Header = (props) => {
       />
     </div>
     
-    <div id="carrinho" role="button" className="position-relative d-flex align-items-center gap-3">
+    <div
+     id="carrinho" 
+     role="button" 
+
+      data-bs-toggle="offcanvas" data-bs-target="#carrinhoOffCanvas"
+
+     className="position-relative d-flex align-items-center gap-3">
+
       <i className="bi bi-cart4 text-light fs-2"></i>
 
       {props.contadorJogos > 0 && (
