@@ -2,23 +2,22 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 const CarrinhoOffCanvas = (props) => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const total = props.carrinhoItem.reduce(
-  (acc, item) => 
-    acc + (item.preco - (item.preco * item.desconto) / 100) * item.quantidade,
-  0
-);
+  const total = props.carrinhoItem.reduce(
+    (acc, item) =>
+      acc + (item.preco - (item.preco * item.desconto) / 100) * item.quantidade,
+    0
+  );
 
-const goToCheckout = () => {
-  navigate("/checkout");
-}
-
+  const goToCheckout = () => {
+    navigate("/checkout");
+  };
 
   return (
     <div
       id="carrinhoOffCanvas"
-      className="offcanvas offcanvas-end "
+      className="offcanvas offcanvas-end"
       style={{ background: "#364A63" }}
     >
       <div
@@ -78,13 +77,13 @@ const goToCheckout = () => {
                         </button>
                         <span>{item.quantidade}</span>
                         <button
-                         className="btn border-0"
-                         onClick={() =>
-                          props.onUpdateCarrinho(item, item.quantidade + 1)
-                         }
-                         >
+                          className="btn border-0"
+                          onClick={() =>
+                            props.onUpdateCarrinho(item, item.quantidade + 1)
+                          }
+                        >
                           +
-                          </button>
+                        </button>
                       </div>
 
                       <div className="d-flex flex-column align-items-end">
@@ -106,18 +105,18 @@ const goToCheckout = () => {
               ))}
             </ul>
 
-            <hr className="text-white"/>
-            <div className="d-flex justify-content-between text-light fs-2">
+            <hr className="text-white" />
+            <div className="d-flex justify-content-between text-light fs-4">
               <strong>Total:</strong>
               <strong>R$ {total.toFixed(2)}</strong>
             </div>
-            <button 
-            id="addCarrinho"
-             className="btn btn-sucecess desconto border-0 mt-2 w-100 fs-5"
-             data-bs-toggle="offcanvas"
+            <button
+              id="addCarrinho"
+              className="btn btn-success desconto border-0 w-100 mt-2 fs-5"
+              data-bs-toggle="offcanvas"
               data-bs-target="#carrinhoOffCanvas"
               onClick={goToCheckout}
-             >
+            >
               Finalizar Compra
             </button>
           </>
