@@ -14,7 +14,8 @@ const handleAddCarrinho = () => {
   return (
   <>
   <Header contadorJogos={contador}/>
-  <Promotion  onAddCarrinho={handleAddCarrinho} />
+  <Promotion  onAddCarrinho={handleAddCarrinho} /> 
+  
   </>
   );
 }
